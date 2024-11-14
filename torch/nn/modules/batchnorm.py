@@ -274,7 +274,7 @@ class BatchNorm1d(_BatchNorm):
 
     .. math::
 
-        y = \frac{x - \mathrm{E}[x]}{\sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta
+        y_i = \frac{x_i - \mathrm{E}_{\text{batch}}[x]}{\sqrt{\mathrm{Var}_{\text{batch}}[x] + \epsilon}} * \gamma_i + \beta_i
 
     The mean and standard-deviation are calculated per-dimension over
     the mini-batches and :math:`\gamma` and :math:`\beta` are learnable parameter vectors
@@ -385,7 +385,7 @@ class BatchNorm2d(_BatchNorm):
 
     .. math::
 
-        y = \frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta
+        y_i = \frac{x_i - \mathrm{E}_{\text{batch}}[x]}{\sqrt{\mathrm{Var}_{\text{batch}}[x] + \epsilon}} * \gamma_i + \beta_i
 
     The mean and standard-deviation are calculated per-dimension over
     the mini-batches and :math:`\gamma` and :math:`\beta` are learnable parameter vectors
@@ -495,7 +495,7 @@ class BatchNorm3d(_BatchNorm):
 
     .. math::
 
-        y = \frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta
+        y_i = \frac{x_i - \mathrm{E}_{\text{batch}}[x]}{\sqrt{\mathrm{Var}_{\text{batch}}[x] + \epsilon}} * \gamma_i + \beta_i
 
     The mean and standard-deviation are calculated per-dimension over
     the mini-batches and :math:`\gamma` and :math:`\beta` are learnable parameter vectors
@@ -606,7 +606,7 @@ class SyncBatchNorm(_BatchNorm):
 
     .. math::
 
-        y = \frac{x - \mathrm{E}[x]}{ \sqrt{\mathrm{Var}[x] + \epsilon}} * \gamma + \beta
+        y_i = \frac{x_i - \mathrm{E}_{\text{batch}}[x]}{\sqrt{\mathrm{Var}_{\text{batch}}[x] + \epsilon}} * \gamma_i + \beta_i
 
     The mean and standard-deviation are calculated per-dimension over all
     mini-batches of the same process groups. :math:`\gamma` and :math:`\beta`
