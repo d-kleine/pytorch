@@ -92,7 +92,7 @@ _shape_t = Union[int, List[int], Size]
 
 
 class LayerNorm(Module):
-    r"""Applies Layer Normalization over a mini-batch of inputs.
+    r"""Applies Layer Normalization over all inputs across the feature dimension.
 
     This layer implements the operation as described in
     the paper `Layer Normalization <https://arxiv.org/abs/1607.06450>`__

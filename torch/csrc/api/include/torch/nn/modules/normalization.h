@@ -15,8 +15,8 @@ namespace torch::nn {
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ LayerNorm ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-/// Applies Layer Normalization over a mini-batch of inputs as described in
-/// the paper `Layer Normalization`_ .
+/// Applies Layer Normalization over all inputs across the feature dimension
+/// as described in the paper `Layer Normalization`_ .
 /// See https://pytorch.org/docs/main/nn.html#torch.nn.LayerNorm to learn
 /// about the exact behavior of this module.
 ///
@@ -41,8 +41,8 @@ class TORCH_API LayerNormImpl : public torch::nn::Cloneable<LayerNormImpl> {
   /// Pretty prints the `LayerNorm` module into the given `stream`.
   void pretty_print(std::ostream& stream) const override;
 
-  /// Applies layer normalization over a mini-batch of inputs as described in
-  /// the paper `Layer Normalization`_ .
+  /// Applies Layer Normalization over all inputs across the feature dimension
+  /// as described in the paper `Layer Normalization`_ .
   ///
   /// The mean and standard-deviation are calculated separately over the last
   /// certain number dimensions which have to be of the shape specified by
